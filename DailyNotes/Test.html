@@ -1,0 +1,319 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .parallelogram li {
+            position: relative;
+            width: 100px;
+            margin-right: 5px;
+            display: inline-block;
+            text-align: center;
+            list-style-type: none;
+        }
+
+            .parallelogram li::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                top: 0;
+                z-index: -1;
+                background: #2175BC;
+                -moz-transform: skewX(-25deg);
+                -ms-transform: skewX(-25deg);
+                -webkit-transform: skewX(-25deg);
+                transform: skewX(-25deg);
+            }
+
+            .parallelogram li:hover::after {
+                background: #2586D7;
+            }
+
+        .trapezoid li {
+            position: relative;
+            width: 100px;
+            display: inline-block;
+            text-align: center;
+            list-style-type: none;
+        }
+
+            .trapezoid li::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: -1;
+                background: #2175BC;
+                -moz-transform: perspective(0.5em) rotateX(5deg);
+                -ms-transform: perspective(0.5em) rotateX(5deg);
+                -webkit-transform: perspective(0.5em) rotateX(5deg);
+                transform: perspective(0.5em) rotateX(5deg);
+                -moz-transform-origin: bottom;
+                -webkit-transform-origin: bottom;
+                transform-origin: bottom;
+            }
+
+            .trapezoid li:hover::after {
+                background: #3B9BE5;
+            }
+
+        body {
+            background: url("") no-repeat center center fixed;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            -webkit-background-size: cover;
+            background-size: cover;
+        }
+
+        .woolglass {
+            position: relative;
+            background: rgba(255, 255, 255, 0.3);
+            overflow: hidden;
+        }
+
+            .woolglass::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: url("Image/登录.jpg") no-repeat center center fixed;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                -webkit-background-size: cover;
+                background-size: cover;
+                -webkit-filter: blur(20px);
+                filter: blur(20px);
+                margin: -30px;
+                z-index: -1;
+            }
+    </style>
+    <script src="script/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+        //设为首页
+        function SetHome(obj, url) {
+            try {
+                obj.style.behavior = 'url(#default#homepage)';
+                obj.setHomePage(url);
+            } catch (e) {
+                if (window.netscape) {
+                    try {
+                        netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                    } catch (e) {
+                        alert("抱歉，此操作被浏览器拒绝！\n\n请在浏览器地址栏输入“about:config”并回车然后将[signed.applets.codebase_principal_support]设置为'true'");
+                    }
+                } else {
+                    alert("抱歉，您所使用的浏览器无法完成此操作。\n\n您需要手动将【" + url + "】设置为首页。");
+                }
+            }
+        }
+        //收藏本站
+        function AddFavorite(title, url) {
+            try {
+                window.external.addFavorite(url, title);
+            }
+            catch (e) {
+                try {
+                    window.sidebar.addPanel(title, url, "");
+                }
+                catch (e) {
+                    alert("抱歉，您所使用的浏览器无法完成此操作。\n\n加入收藏失败，请使用Ctrl+D进行添加");
+                }
+            }
+        }
+        //保存到桌面
+        function toDesktop(sUrl, sName) {
+            try {
+                var WshShell = new ActiveXObject("WScript.Shell");
+                var oUrlLink = WshShell.CreateShortcut(WshShell.SpecialFolders("Desktop") + "\\" + sName + ".url");
+                oUrlLink.TargetPath = sUrl;
+                oUrlLink.Save();
+            }
+            catch (e) {
+                alert("当前IE安全级别不允许操作！");
+            }
+        }
+
+        $('.trapezoid li').click(function (event) {
+            $('.trapezoid li').removeClass('zIndex');
+            $(this).addClass('zIndex');
+        });
+
+        let getFinalPrice = (price, tax = 0.7) => price + price * tax;
+        getFinalPrice(500); // 850
+        //function foo(x, y, z) {
+        //    console.log(x, y, z);
+        //}
+
+        //let arr = [1, 2, 3];
+        //foo(...arr); // 1 2 3
+
+        function foo(...args) {
+            console.log(args);
+        }
+        foo(1, 2, 3, 4, 5); // [1, 2, 3, 4, 5]
+        let xValue = 0x10; //八进制使用`0x` 或者 `0X`
+        console.log(xValue); // 16
+
+        let oValue = 0o10; //八进制使用`0o` 或者 `0O`
+        console.log(oValue); // 8
+
+        let bValue = 0b10; // 二进制使用 `0b` 或者 `0B`
+        console.log(bValue); // 2
+
+        function getCar(make, model, value) {
+            return {
+                // 简写变量
+                make,  // 等同于 make: make
+                model, // 等同于 model: model
+                value, // 等同于 value: value
+
+                // 属性可以使用表达式计算值
+                ['make' + make]: true,
+
+                // 忽略 `function` 关键词简写对象函数
+                depreciate() {
+                    this.value -= 2500;
+                }
+            };
+        }
+
+        let car = getCar('Barret', 'Lee', 40000);
+        console.log(car);
+        let [a, b, c] = [1, 2, 3];
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        [a, b] = [b, a];
+        console.log(a);
+        console.log(b);
+        let { d, e } = { d: "aaa", e: "bbb" };
+        console.log(d);
+        console.log(e);
+        const [f, h, i, j, k] = "Hello";
+        console.log(f);
+        console.log(h);
+        console.log(i);
+        console.log(j);
+        console.log(k);
+        let { toString: l } = 123;
+        console.log(l === Number.prototype.toString);
+        let { toString: m } = true;
+        console.log(m === Boolean.prototype.toString);
+        function add([x, y]) {
+            return x + y;
+        }
+        console.log(add([1, 2]));
+        function input(...params) {
+            console.log(params);
+        }
+
+        input(1, 2, 3, 4);  //[1,2,3,4]
+
+        function input2(a, b, ...params) {
+            console.log(params);
+        }
+
+        input2(1, 2, 3, 4);  //[3,4]
+        arr1 = [1, 2, 3];
+        arr2 = [4, 5, 6];
+        arr3 = [7, 8, 9];
+
+        arr4 = [...arr1, ...arr2, ...arr3] //[1,2,3,4,5,6,7,8,9]  用于数组合并
+        console.log(arr4);
+        list = [1, 2, 3, 4, 5];
+
+        let [n, o, ...p] = list;
+        console.log(n);
+        console.log(o);
+        console.log(p);
+        function user(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+        let user1 = new user("shang", "yuankun");
+        // 用于解耦，感觉这有点像是rest参数的应用，应为结果是数组
+        var message = `The user ${user1.firstName} ${user1.lastName} cannot be
+${user1.action} because ${user1.validationError}`;
+        console.log(message);
+
+        class Person {
+
+            constructor(firstName, lastName, age) {
+                console.log(arguments);
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.age = age;
+            }
+
+            get firstName() { return this._firstName; }
+
+            set firstName(value) { this._firstName = value; }
+
+            get lastName() { return this._lastName; }
+
+            set lastName(value) { this._lastName = value; }
+
+            get age() { return this._age; }
+
+            set age(value) { this._age = value; }
+        }
+        let person1 = new Person("shang","yuankun",26);
+        console.log(person1.firstName);
+        person1._firstName = "wu";
+        console.log(person1._firstName);
+
+        function Car() {
+           
+        }
+
+        Car.prototype.color = "blue";
+        Car.prototype.doors = 4;
+        Car.prototype.mpg = 25;
+        Car.prototype.showColor = function () {
+            alert(this.color);
+        };
+
+        var oCar1 = new Car();
+        var oCar2 = new Car();
+        console.log(oCar1.color);
+        console.log(oCar2.color);
+    </script>
+</head>
+<body>
+    <div class="parallelogram">
+        <ul>
+            <li>博客园</li>
+            <li>首页</li>
+            <li>新随笔</li>
+            <li>联系</li>
+            <li>订阅</li>
+            <li>管理</li>
+        </ul>
+    </div>
+    <div class="trapezoid">
+        <ul>
+            <li>博客园</li>
+            <li>首页</li>
+            <li>新随笔</li>
+            <li>联系</li>
+            <li>订阅</li>
+            <li>管理</li>
+        </ul>
+    </div>
+    <div class="woolglass">
+        My Name is Uncle-Keith！
+    </div>
+    <div>
+        <a href="javascript:void(0);" onclick="SetHome(this, 'http://www.baidu.com');">设为首页</a>
+        <a href="javascript:void(0);" onclick="AddFavorite('我的网站', location.href);">收藏本站</a>
+        <a href="javascript:void(0);" onclick=" toDesktop(location.href, '我的网站');">保存到桌面</a>
+    </div>
+</body>
+</html>

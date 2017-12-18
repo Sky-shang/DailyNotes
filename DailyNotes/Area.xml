@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Area  iAreaID ="0" cAreaName="城市">
+  <Province iAreaID ="1" cAreaName="北京市"/>
+  <Province iAreaID ="2" cAreaName="上海市"/>
+  <Province iAreaID ="3" cAreaName="天津市"/>
+  <Province iAreaID ="4" cAreaName="重庆市"/>
+  <Province iAreaID ="5" cAreaName="湖北省">
+    <City iAreaID ="51" cAreaName="武汉市"/>
+    <City iAreaID ="52" cAreaName="黄冈市" />
+    <City iAreaID ="53" cAreaName="荆州市"/>
+    <City iAreaID ="54" cAreaName="武穴市" />
+    <City iAreaID ="55" cAreaName="十堰市"/>
+    <City iAreaID ="56" cAreaName="黄石市" />
+  </Province>
+  <Province iAreaID ="6" cAreaName="河北省">
+    <City iAreaID ="61" cAreaName="石家庄市"/>
+    <City iAreaID ="62" cAreaName="唐山市" />
+  </Province>
+  <Province iAreaID ="7" cAreaName="山西省">
+    <City iAreaID ="71" cAreaName="太原市" />
+    <City iAreaID ="72" cAreaName="大同市" />
+  </Province>
+</Area>
