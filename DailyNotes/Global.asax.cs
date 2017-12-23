@@ -12,12 +12,21 @@ namespace DailyNotes
 
         protected void Application_Start(object sender, EventArgs e)
         {
-
+            Application["UserCount"] = 0;
         }
 
         protected void Session_Start(object sender, EventArgs e)
         {
-
+            try
+            {
+                Application.Lock();
+                int userCount = (int)Application["UserCount"];
+                Application["UserCount"] = ++userCount;
+            }
+            finally
+            {
+                Application.UnLock();
+            }
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)
