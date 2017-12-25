@@ -11,7 +11,7 @@ namespace DailyNotes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Label1.Text = "  当前在线人数：" + (int) Application["UserCount"];
         }
         protected void lbtnLogin_Click(object sender, EventArgs e)
         {
