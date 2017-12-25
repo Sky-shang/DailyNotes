@@ -9,7 +9,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <div>测试master
         </div>
     </form>
 </body>
