@@ -14,6 +14,7 @@ namespace DailyNotes
 {
     public partial class Default : System.Web.UI.Page
     {
+        //string a = HttpContext.Current.User.Identity.Name;
         CommonClass CC = new CommonClass();
         protected void Page_Load(object sender, EventArgs e)
         {

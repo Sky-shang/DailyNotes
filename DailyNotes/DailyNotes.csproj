@@ -165,6 +165,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ModelTemplate.cs</LastGenOutput>
     </Content>
+    <Content Include="WebForm1.aspx" />
     <Content Include="XMLDynamicTreeView.aspx" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
@@ -388,6 +389,13 @@
     </Compile>
     <Compile Include="ValidateNum.aspx.designer.cs">
       <DependentUpon>ValidateNum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="XMLDynamicTreeView.aspx.cs">
       <DependentUpon>XMLDynamicTreeView.aspx</DependentUpon>
