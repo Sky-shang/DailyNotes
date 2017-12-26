@@ -12,11 +12,11 @@ namespace DailyNotes.Models
 
         public IList<Item> Items
         {
-            get { return Items; }
+            get { return items; }
         }
         public decimal TotalCost
         {
-            get { return Items.Sum(x=>x.Cost); }
+            get { return items.Sum(x=>x.Cost); }
         }
     }
 
