@@ -13,7 +13,7 @@ using System.Text;
 using System.Security.Cryptography;//MD5加密需引入的命名空间
 using System.Data.SqlClient;//数据库操作需引入的命名空间
 
-namespace DailyNotes
+namespace DailyNotes.Models
 {
     /// <summary>
     /// DB 的摘要说明

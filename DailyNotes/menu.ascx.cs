@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Caching;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -11,8 +12,14 @@ namespace DailyNotes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            HttpContext.Current.Cache.Add(key: "cache1",
+                value: txtKey.Text,
+                dependencies: null,
+                absoluteExpiration: Cache.NoAbsoluteExpiration,
+                slidingExpiration: TimeSpan.FromMinutes(30), 
+                priority: CacheItemPriority.Normal,
+                onRemoveCallback:null);
             this.labDate.Text = "今天是：" + System.DateTime.Now.ToString("yyyy年MM月dd日");
-
         }
         protected void btnSearch_Click(object sender, EventArgs e)
         {

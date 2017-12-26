@@ -9,7 +9,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Data.SqlClient;
 
-namespace DailyNotes
+namespace DailyNotes.Models
 {
     /// <summary>
     /// CommonClass 的摘要说明

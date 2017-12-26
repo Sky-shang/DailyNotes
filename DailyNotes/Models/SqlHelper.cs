@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Data.Common;
 
-namespace DailyNotes
+namespace DailyNotes.Models
 {
     public class SqlHelper
     {

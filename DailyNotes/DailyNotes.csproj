@@ -195,7 +195,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseClass.cs" />
+    <Compile Include="Models\BaseClass.cs" />
     <Compile Include="bottom.ascx.cs">
       <DependentUpon>bottom.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -203,8 +203,8 @@
     <Compile Include="bottom.ascx.designer.cs">
       <DependentUpon>bottom.ascx</DependentUpon>
     </Compile>
-    <Compile Include="CommonClass.cs" />
-    <Compile Include="DB.cs" />
+    <Compile Include="Models\CommonClass.cs" />
+    <Compile Include="Models\DB.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -309,6 +309,7 @@
     <Compile Include="menu.ascx.designer.cs">
       <DependentUpon>menu.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="newsList.aspx.cs">
       <DependentUpon>newsList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -345,7 +346,7 @@
     <Compile Include="SqlDynamicTreeView.aspx.designer.cs">
       <DependentUpon>SqlDynamicTreeView.aspx</DependentUpon>
     </Compile>
-    <Compile Include="SqlHelper.cs" />
+    <Compile Include="Models\SqlHelper.cs" />
     <Compile Include="StaticTreeView.aspx.cs">
       <DependentUpon>StaticTreeView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

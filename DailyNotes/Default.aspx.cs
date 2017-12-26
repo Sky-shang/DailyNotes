@@ -9,15 +9,25 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Data.SqlClient;
+using DailyNotes.Models;
+using System.Web.Profile;
 
 namespace DailyNotes
 {
     public partial class Default : System.Web.UI.Page
     {
-        //string a = HttpContext.Current.User.Identity.Name;
+        //string a = HttpContext.Current.User.Identity.Name;      
         CommonClass CC = new CommonClass();
         protected void Page_Load(object sender, EventArgs e)
         {
+            dynamic p = this.Context.Profile;
+            p.Color = "Red";
+            p.UserInfo.Name = "Chrinstian";
+            var cart = new ShoppingCart();
+            cart.Items.Add(new Item{Description="Sample1",Cost=20.30M});
+            cart.Items.Add(new Item { Description = "Sample2", Cost = 14.30M });
+            p.ShoppingCart = cart;
+            p.Save();
             //时政要闻
             dlSZ.DataSource = CC.GetDataSet("SELECT TOP 5 * FROM tb_News WHERE Style = '时政要闻' order by issueDate Desc", "tbNews");
             dlSZ.DataKeyField = "id";
