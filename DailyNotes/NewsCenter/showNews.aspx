@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="showNews.aspx.cs" Inherits="DailyNotes.showNews" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="showNews.aspx.cs" Inherits="DailyNotes.NewsCenter.showNews" %>
 
 <!DOCTYPE html>
 

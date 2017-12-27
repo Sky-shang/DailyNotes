@@ -1,14 +1,14 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeBehind="~/Default.aspx.cs" Inherits="DailyNotes.Default" Title="新闻发布系统前台首页分类显示" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/NewsCenter/MasterPage.master" AutoEventWireup="true" CodeBehind="~/NewsCenter/Default.aspx.cs" Inherits="DailyNotes.NewsCenter.Default" Title="新闻发布系统前台首页分类显示" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <table style="font-size: 9pt; height: 677px; width: 768px" cellpadding="0" cellspacing="0">
         <tr>
             <td>
-                <table style="font-size: 9pt; height: 166px; width: 381px" background="Image/时政要闻.jpg" cellpadding="0" cellspacing="0">
+                <table style="font-size: 9pt; height: 166px; width: 381px" background="/Image/时政要闻.jpg" cellpadding="0" cellspacing="0">
                     <tr style="font-size: 9pt; height: 30px; width: 381px">
                         <td colspan="2" align="right" valign="middle">
                             <br />
-                            <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Image/更多.jpg" PostBackUrl="~/newsList.aspx?id=1" />
+                            <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Image/更多.jpg" PostBackUrl="~/NewsCenter/newsList.aspx?id=1" />
                         </td>
                     </tr>
                     <tr style="font-size: 9pt; height: 136px; width: 381px">
@@ -37,11 +37,11 @@
                 </table>
             </td>
             <td>
-                <table style="font-size: 9pt; height: 166px; width: 397px" background="Image/经济动向.jpg" cellpadding="0" cellspacing="0">
+                <table style="font-size: 9pt; height: 166px; width: 397px" background="/Image/经济动向.jpg" cellpadding="0" cellspacing="0">
                     <tr style="font-size: 9pt; height: 30px; width: 397px">
                         <td colspan="2" align="right" valign="middle">
                             <br />
-                            <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/Image/更多2.jpg" PostBackUrl="~/newsList.aspx?id=2" />&nbsp;&nbsp; &nbsp;&nbsp;
+                            <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/Image/更多2.jpg" PostBackUrl="~/NewsCenter/newsList.aspx?id=2" />&nbsp;&nbsp; &nbsp;&nbsp;
                         </td>
                     </tr>
                     <tr style="font-size: 9pt; height: 136px; width: 397px">
@@ -71,17 +71,17 @@
             </td>
         </tr>
         <tr>
-            <td>
-                <table style="font-size: 9pt; height: 165px; width: 381px" background="Image/科学教育.jpg" cellpadding="0" cellspacing="0">
+            <td> 
+                <table style="font-size: 9pt; height: 165px; width: 381px" background="/Image/科学教育.jpg" cellpadding="0" cellspacing="0">
                     <tr style="font-size: 9pt; height: 30px; width: 381px">
                         <td colspan="2" align="right" valign="middle">
                             <br />
-                            <asp:ImageButton ID="ImageButton4" runat="server" ImageUrl="Image/更多.jpg" PostBackUrl="~/newsList.aspx?id=4" />
+                            <asp:ImageButton ID="ImageButton4" runat="server" ImageUrl="~/Image/更多.jpg" PostBackUrl="~/newsList.aspx?id=4" />
                         </td>
                     </tr>
                     <tr style="font-size: 9pt; height: 135px; width: 381px">
                         <td style="margin-top: 0px; padding-top: 0px; width: 141px;" align="center">
-                            <asp:Image ID="Image4" runat="server" Height="79px" ImageUrl="Image/图片科学教育.jpg" Width="86px" />
+                            <asp:Image ID="Image4" runat="server" Height="79px" ImageUrl="~/Image/图片科学教育.jpg" Width="86px" />
                         </td>
                         <td style="font-size: 9pt; width: 240px">
                             <asp:DataList ID="dlKJ" runat="server" OnItemCommand="dlKJ_ItemCommand" BackColor="White">
@@ -105,16 +105,16 @@
                 </table>
             </td>
             <td>
-                <table style="font-size: 9pt; height: 165px; width: 397px" background="Image/法制道德.jpg" cellpadding="0" cellspacing="0">
+                <table style="font-size: 9pt; height: 165px; width: 397px" background="/Image/法制道德.jpg" cellpadding="0" cellspacing="0">
                     <tr style="font-size: 9pt; height: 30px; width: 381px">
                         <td colspan="2" align="right" valign="middle">
                             <br />
-                            <asp:ImageButton ID="ImageButton5" runat="server" ImageUrl="Image/更多2.jpg" PostBackUrl="~/newsList.aspx?id=5" />&nbsp;&nbsp; &nbsp;&nbsp; 
+                            <asp:ImageButton ID="ImageButton5" runat="server" ImageUrl="~/Image/更多2.jpg" PostBackUrl="~/NewsCenter/newsList.aspx?id=5" />&nbsp;&nbsp; &nbsp;&nbsp; 
                         </td>
                     </tr>
                     <tr style="font-size: 9pt; height: 135px; width: 381px">
                         <td style="margin-top: 0px; padding-top: 0px; width: 141px;" align="center">
-                            <asp:Image ID="Image5" runat="server" Height="79px" ImageUrl="Image/法制道德图片.jpg" Width="86px" />
+                            <asp:Image ID="Image5" runat="server" Height="79px" ImageUrl="~/Image/法制道德图片.jpg" Width="86px" />
                         </td>
                         <td style="font-size: 9pt; width: 240px">
                             <asp:DataList ID="dlFZ" runat="server" OnItemCommand="dlFZ_ItemCommand" BackColor="White">
@@ -140,11 +140,11 @@
         </tr>
         <tr>
             <td>
-                <table style="font-size: 9pt; height: 165px; width: 381px" background="Image/社会现象.jpg" cellpadding="0" cellspacing="0">
+                <table style="font-size: 9pt; height: 165px; width: 381px" background="/Image/社会现象.jpg" cellpadding="0" cellspacing="0">
                     <tr style="font-size: 9pt; height: 30px; width: 381px">
                         <td colspan="2" align="right" valign="middle">
                             <br />
-                            <asp:ImageButton ID="ImageButton6" runat="server" ImageUrl="~/Image/更多.jpg" PostBackUrl="~/newsList.aspx?id=6" />
+                            <asp:ImageButton ID="ImageButton6" runat="server" ImageUrl="~/Image/更多.jpg" PostBackUrl="~/NewsCenter/newsList.aspx?id=6" />
                         </td>
                     </tr>
                     <tr style="font-size: 9pt; height: 135px; width: 381px">
@@ -173,11 +173,11 @@
                 </table>
             </td>
             <td>
-                <table style="font-size: 9pt; height: 165px; width: 397px" background="Image/体育世界.jpg" cellpadding="0" cellspacing="0">
+                <table style="font-size: 9pt; height: 165px; width: 397px" background="/Image/体育世界.jpg" cellpadding="0" cellspacing="0">
                     <tr style="font-size: 9pt; height: 30px; width: 397px">
                         <td colspan="2" align="right" valign="middle">
                             <br />
-                            <asp:ImageButton ID="ImageButton7" runat="server" ImageUrl="~/Image/更多2.jpg" PostBackUrl="~/newsList.aspx?id=7" />
+                            <asp:ImageButton ID="ImageButton7" runat="server" ImageUrl="~/Image/更多2.jpg" PostBackUrl="~/NewsCenter/newsList.aspx?id=7" />
                             &nbsp;&nbsp; &nbsp;&nbsp;
                         </td>
                     </tr>
@@ -209,11 +209,11 @@
         </tr>
         <tr>
             <td>
-                <table style="font-size: 9pt; height: 181px; width: 381px" background="Image/时尚娱乐.jpg" cellpadding="0" cellspacing="0">
+                <table style="font-size: 9pt; height: 181px; width: 381px" background="/Image/时尚娱乐.jpg" cellpadding="0" cellspacing="0">
                     <tr style="font-size: 9pt; height: 30px; width: 397px">
                         <td colspan="2" align="right" valign="middle">
                             <br />
-                            <asp:ImageButton ID="ImageButton8" runat="server" ImageUrl="~/Image/更多.jpg" PostBackUrl="~/newsList.aspx?id=8" />
+                            <asp:ImageButton ID="ImageButton8" runat="server" ImageUrl="~/Image/更多.jpg" PostBackUrl="~/NewsCenter/newsList.aspx?id=8" />
                         </td>
                     </tr>
                     <tr style="font-size: 9pt; height: 151px; width: 397px">
@@ -242,11 +242,11 @@
                 </table>
             </td>
             <td>
-                <table style="font-size: 9pt; height: 181px; width: 397px" background="Image/世界军事.jpg" cellpadding="0" cellspacing="0">
+                <table style="font-size: 9pt; height: 181px; width: 397px" background="/Image/世界军事.jpg" cellpadding="0" cellspacing="0">
                     <tr style="font-size: 9pt; height: 30px; width: 397px">
                         <td colspan="2" align="right" valign="middle">
                             <br />
-                            <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Image/更多2.jpg" PostBackUrl="~/newsList.aspx?id=3" />&nbsp;&nbsp; &nbsp;&nbsp; 
+                            <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Image/更多2.jpg" PostBackUrl="~/NewsCenter/newsList.aspx?id=3" />&nbsp;&nbsp; &nbsp;&nbsp; 
                         </td>
                     </tr>
                     <tr style="font-size: 9pt; height: 151px; width: 397px">

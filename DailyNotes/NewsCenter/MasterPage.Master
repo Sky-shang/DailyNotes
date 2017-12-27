@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="DailyNotes.MasterPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="DailyNotes.NewsCenter.MasterPage" %>
 <%@ Register Src="bottom.ascx" TagName="bottom" TagPrefix="uc2" %>
 <%@ Register Src="menu.ascx" TagName="menu" TagPrefix="uc1" %>
 <!DOCTYPE html>

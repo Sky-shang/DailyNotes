@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="bottom.ascx.cs" Inherits="DailyNotes.bottom" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="bottom.ascx.cs" Inherits="DailyNotes.NewsCenter.bottom" %>
 <table style="font-size: 9pt; width: 778px; height: 81px;" align="left" background="Image/底.jpg" cellpadding="0" cellspacing="0">
     <tr style="font-size: 9pt; width: 778px; height: 30px;">
         <td></td>

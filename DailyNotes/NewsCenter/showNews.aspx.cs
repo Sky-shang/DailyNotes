@@ -12,7 +12,7 @@ using System.Data.SqlClient;  //添加类库
 using DailyNotes.Models;
 
 
-namespace DailyNotes
+namespace DailyNotes.NewsCenter
 {
     public partial class showNews : System.Web.UI.Page
     {

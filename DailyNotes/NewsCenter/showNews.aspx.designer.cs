@@ -7,7 +7,7 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace DailyNotes {
+namespace DailyNotes.NewsCenter {
     
     
     public partial class showNews {

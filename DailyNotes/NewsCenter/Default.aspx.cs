@@ -2,7 +2,7 @@
 using System.Web.UI.WebControls;
 using DailyNotes.Models;
 
-namespace DailyNotes
+namespace DailyNotes.NewsCenter
 {
     public partial class Default : System.Web.UI.Page
     {

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace DailyNotes
+namespace DailyNotes.NewsCenter
 {
     public partial class MasterPage : System.Web.UI.MasterPage
     {

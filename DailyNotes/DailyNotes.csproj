@@ -108,7 +108,7 @@
   <ItemGroup>
     <Content Include="TreeView\Area.xml" />
     <Content Include="css\css.css" />
-    <Content Include="Default.aspx" />
+    <Content Include="NewsCenter\Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="HttpModule\AllowedAddresses.txt" />
     <Content Include="Image\14.gif" />
@@ -158,7 +158,7 @@
     <Content Include="Manage\MemberAdd.aspx" />
     <Content Include="Manage\MemberEdit.aspx" />
     <Content Include="Manage\Top.aspx" />
-    <Content Include="MasterPage.Master" />
+    <Content Include="NewsCenter\MasterPage.Master" />
     <Content Include="ProfileSample.aspx" />
     <Content Include="TreeView\SqlDynamicTreeView.aspx" />
     <Content Include="T4\ModelAuto.tt">
@@ -179,19 +179,19 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bottom.ascx" />
+    <Content Include="NewsCenter\bottom.ascx" />
     <Content Include="Image\注册.jpg" />
     <Content Include="Image\用户管理.jpg" />
     <Content Include="Image\用户管理Bottom.jpg" />
     <Content Include="Image\用户管理Head.jpg" />
     <Content Include="Image\登录.jpg" />
     <Content Include="LoginFunction\Login.aspx" />
-    <Content Include="menu.ascx" />
-    <Content Include="newsList.aspx" />
+    <Content Include="NewsCenter\menu.ascx" />
+    <Content Include="NewsCenter\newsList.aspx" />
     <Content Include="LoginFunction\Register.aspx" />
     <Content Include="script\jquery-1.10.2.js" />
-    <Content Include="search.aspx" />
-    <Content Include="showNews.aspx" />
+    <Content Include="NewsCenter\search.aspx" />
+    <Content Include="NewsCenter\showNews.aspx" />
     <Content Include="TreeView\StaticTreeView.aspx" />
     <Content Include="Test.html" />
     <Content Include="LoginFunction\UserManagement.aspx" />
@@ -200,20 +200,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\BaseClass.cs" />
-    <Compile Include="bottom.ascx.cs">
+    <Compile Include="NewsCenter\bottom.ascx.cs">
       <DependentUpon>bottom.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="bottom.ascx.designer.cs">
+    <Compile Include="NewsCenter\bottom.ascx.designer.cs">
       <DependentUpon>bottom.ascx</DependentUpon>
     </Compile>
     <Compile Include="Models\CommonClass.cs" />
     <Compile Include="Models\DB.cs" />
-    <Compile Include="Default.aspx.cs">
+    <Compile Include="NewsCenter\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
+    <Compile Include="NewsCenter\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
@@ -299,26 +299,26 @@
     <Compile Include="Manage\Top.aspx.designer.cs">
       <DependentUpon>Top.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MasterPage.Master.cs">
+    <Compile Include="NewsCenter\MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MasterPage.Master.designer.cs">
+    <Compile Include="NewsCenter\MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="menu.ascx.cs">
+    <Compile Include="NewsCenter\menu.ascx.cs">
       <DependentUpon>menu.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="menu.ascx.designer.cs">
+    <Compile Include="NewsCenter\menu.ascx.designer.cs">
       <DependentUpon>menu.ascx</DependentUpon>
     </Compile>
     <Compile Include="Models\ShoppingCart.cs" />
-    <Compile Include="newsList.aspx.cs">
+    <Compile Include="NewsCenter\newsList.aspx.cs">
       <DependentUpon>newsList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="newsList.aspx.designer.cs">
+    <Compile Include="NewsCenter\newsList.aspx.designer.cs">
       <DependentUpon>newsList.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProfileSample.aspx.cs">
@@ -336,18 +336,18 @@
     <Compile Include="LoginFunction\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="search.aspx.cs">
+    <Compile Include="NewsCenter\search.aspx.cs">
       <DependentUpon>search.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="search.aspx.designer.cs">
+    <Compile Include="NewsCenter\search.aspx.designer.cs">
       <DependentUpon>search.aspx</DependentUpon>
     </Compile>
-    <Compile Include="showNews.aspx.cs">
+    <Compile Include="NewsCenter\showNews.aspx.cs">
       <DependentUpon>showNews.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="showNews.aspx.designer.cs">
+    <Compile Include="NewsCenter\showNews.aspx.designer.cs">
       <DependentUpon>showNews.aspx</DependentUpon>
     </Compile>
     <Compile Include="TreeView\SqlDynamicTreeView.aspx.cs">

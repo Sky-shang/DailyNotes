@@ -11,7 +11,7 @@ using System.Web.UI.HtmlControls;
 using DailyNotes.Models;
 
 
-namespace DailyNotes
+namespace DailyNotes.NewsCenter
 {
     public partial class newsList : System.Web.UI.Page
     {

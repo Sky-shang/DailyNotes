@@ -6,7 +6,7 @@ using System.Web.Caching;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace DailyNotes
+namespace DailyNotes.NewsCenter
 {
     public partial class menu : System.Web.UI.UserControl
     {

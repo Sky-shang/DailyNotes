@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeBehind="newsList.aspx.cs" Inherits="DailyNotes.newsList" Title="分类显示新闻" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/NewsCenter/MasterPage.master" AutoEventWireup="true" CodeBehind="newsList.aspx.cs" Inherits="DailyNotes.NewsCenter.newsList" Title="分类显示新闻" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <table style="height: 580px; width: 778px; font-size: 9pt" align="center" cellspacing="0" background="Image/新闻发布系统二级页.jpg">

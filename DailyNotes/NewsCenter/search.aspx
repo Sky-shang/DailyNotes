@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeBehind="search.aspx.cs" Inherits="DailyNotes.search" Title="Untitled Page" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/NewsCenter/MasterPage.master" AutoEventWireup="true" CodeBehind="search.aspx.cs" Inherits="DailyNotes.NewsCenter.search" Title="Untitled Page" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <table style="height: 580px; width: 778px; margin-top: 0px; padding-top: 0px; background-color: #ffffff; font-size: 9pt" align="center" class="txt" cellspacing="0" cellpadding="0" background="Images/新闻发布系统二级页.jpg">

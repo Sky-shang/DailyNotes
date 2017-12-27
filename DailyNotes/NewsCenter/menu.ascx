@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="menu.ascx.cs" Inherits="DailyNotes.menu" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="menu.ascx.cs" Inherits="DailyNotes.NewsCenter.menu" %>
 <table style="font-size: 10pt; color: #000099; margin-top: 0px; padding-top: 0px; width: 778px; height:214px;background:url('../Image/新闻发布系统首页1.jpg') no-repeat;z-index:-1;" border="0" cellspacing="0" >
     <tr style ="width :778px; height :10px">
     <td align=center  colspan =11>
