@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 using DailyNotes.Models;
 
 
-namespace DailyNotes
+namespace DailyNotes.LoginFunction
 {
     public partial class Login : System.Web.UI.Page
     {
@@ -19,7 +19,7 @@ namespace DailyNotes
         //注册按钮
         protected void btnRegister_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Register.aspx");//跳转到用户注册页面
+            Response.Redirect("~/LoginFunction/Register.aspx");//跳转到用户注册页面
         }
         //登录按钮
         protected void btnLogin_Click(object sender, EventArgs e)
@@ -38,7 +38,7 @@ namespace DailyNotes
                 {
                     Session["UserID"] = dr.GetValue(0);//将该用户的ID存入Session["UserID"]中
                     Session["Role"] = dr.GetValue(4);//将该用户的权限存入Session["Role"]中
-                    Response.Redirect("~/UserManagement.aspx");//跳转到主页
+                    Response.Redirect("~/LoginFunction/UserManagement.aspx");//跳转到主页
                 }
                 else
                 {

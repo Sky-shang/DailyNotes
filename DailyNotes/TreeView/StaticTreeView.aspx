@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StaticTreeView.aspx.cs" Inherits="DailyNotes.StaticTreeView" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StaticTreeView.aspx.cs" Inherits="DailyNotes.TreeView.StaticTreeView" %>
 
 <!DOCTYPE html>
 

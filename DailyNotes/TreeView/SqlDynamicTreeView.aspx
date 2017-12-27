@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SqlDynamicTreeView.aspx.cs" Inherits="DailyNotes.SqlDynamicTreeView" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SqlDynamicTreeView.aspx.cs" Inherits="DailyNotes.TreeView.SqlDynamicTreeView" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">

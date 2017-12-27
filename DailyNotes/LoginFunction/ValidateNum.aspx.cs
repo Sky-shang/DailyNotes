@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace DailyNotes
+namespace DailyNotes.LoginFunction
 {
     public partial class ValidateNum : System.Web.UI.Page
     {

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace DailyNotes
+namespace DailyNotes.TreeView
 {
     public partial class StaticTreeView : System.Web.UI.Page
     {

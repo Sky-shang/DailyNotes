@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 using DailyNotes.Models;
 
 
-namespace DailyNotes
+namespace DailyNotes.LoginFunction
 {
     public partial class UserManagement : System.Web.UI.Page
     {

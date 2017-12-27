@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserManagement.aspx.cs" Inherits="DailyNotes.UserManagement" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserManagement.aspx.cs" Inherits="DailyNotes.LoginFunction.UserManagement" %>
 
 <!DOCTYPE html>
 

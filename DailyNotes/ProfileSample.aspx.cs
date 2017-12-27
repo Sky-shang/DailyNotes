@@ -37,12 +37,11 @@ namespace DailyNotes
 
         protected void Button2_Click(object sender, EventArgs e)
         {
+            //获取从去年开始就不活动的匿名Profile
             var inactiveProfiles = ProfileManager.GetAllInactiveProfiles(ProfileAuthenticationOption.Anonymous,DateTime.Now.AddYears(-1));
             Label1.Text = inactiveProfiles.Count.ToString();
             //删除从去年开始就不活动的匿名Profile
             //ProfileManager.DeleteInactiveProfiles(ProfileAuthenticationOption.Anonymous, DateTime.Now.AddYears(-1));
-            //Label1.Text = new JavaScriptSerializer().Serialize(inactiveProfiles);
-
         }
     }
 }

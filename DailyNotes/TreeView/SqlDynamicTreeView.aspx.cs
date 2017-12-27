@@ -9,7 +9,7 @@ using System.Data;
 using DailyNotes.Models;
 
 
-namespace DailyNotes
+namespace DailyNotes.TreeView
 {
     public partial class SqlDynamicTreeView : System.Web.UI.Page
     {

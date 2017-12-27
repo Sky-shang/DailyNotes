@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 using DailyNotes.Models;
 
 
-namespace DailyNotes
+namespace DailyNotes.LoginFunction
 {
     public partial class Register : System.Web.UI.Page
     {
@@ -102,7 +102,7 @@ namespace DailyNotes
         //返回登录页
         protected void btnBack_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Login.aspx");
+            Response.Redirect("~/LoginFunction/Login.aspx");
         }
     }
 }

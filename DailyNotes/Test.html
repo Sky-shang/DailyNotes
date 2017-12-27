@@ -239,8 +239,7 @@
         }
         let user1 = new user("shang", "yuankun");
         // 用于解耦，感觉这有点像是rest参数的应用，应为结果是数组
-        var message = `The user ${user1.firstName} ${user1.lastName} cannot be
-${user1.action} because ${user1.validationError}`;
+        var message = `The user ${user1.firstName} ${user1.lastName} cannot be ${user1.action} because ${user1.validationError}`;
         console.log(message);
 
         class Person {
@@ -264,13 +263,13 @@ ${user1.action} because ${user1.validationError}`;
 
             set age(value) { this._age = value; }
         }
-        let person1 = new Person("shang","yuankun",26);
+        let person1 = new Person("shang", "yuankun", 26);
         console.log(person1.firstName);
         person1._firstName = "wu";
         console.log(person1._firstName);
 
         function Car() {
-           
+
         }
 
         Car.prototype.color = "blue";

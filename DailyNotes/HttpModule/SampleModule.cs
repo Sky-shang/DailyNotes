@@ -8,7 +8,7 @@ namespace DailyNotes.HttpModule
 {
     public class SampleModule : IHttpModule
     {
-        private const string allowedAddressesFile = "HttpModule/AllowedAddresses.txt";
+        private const string AllowedAddressesFile = "/HttpModule/AllowedAddresses.txt";
         private List<string> allowedAddresses;
         public void Init(HttpApplication context)
         {
@@ -18,14 +18,14 @@ namespace DailyNotes.HttpModule
         }
         private void BeginRequest(object sender, EventArgs e)
         {
-            LoadAddresses((sender as HttpApplication).Context);
+            LoadAddresses((sender as HttpApplication)?.Context);
         }
 
         private void LoadAddresses(HttpContext context)
         {
             if (allowedAddresses == null)
             {
-                string path = context.Server.MapPath(allowedAddressesFile);
+                string path = context.Server.MapPath(AllowedAddressesFile);
                 allowedAddresses = File.ReadLines(path).ToList();
             }
         }

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="DailyNotes.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="DailyNotes.LoginFunction.Login" %>
 
 <!DOCTYPE html>
 
@@ -9,7 +9,7 @@
 </head>
 <body style="font-size: 9pt; text-align: center;">
     <form id="form1" runat="server">
-        <table style="background-image: url(Image/登录.jpg); width: 405px; height: 265px">
+        <table style="background-image: url(/Image/登录.jpg); width: 405px; height: 265px">
             <tr>
                 <td style="height: 38px"></td>
             </tr>
@@ -33,7 +33,7 @@
                             <td style="width: 97px">
                                 <asp:TextBox ID="txtValidateNum" runat="server" Width="98px"></asp:TextBox></td>
                             <td>
-                                <asp:Image ID="Image1" runat="server" Height="22px" Width="58px" ImageUrl="~/ValidateNum.aspx" />请输入图片中验证码！</td>
+                                <asp:Image ID="Image1" runat="server" Height="22px" Width="58px" ImageUrl="~/LoginFunction/ValidateNum.aspx" />请输入图片中验证码！</td>
                         </tr>
                         <tr>
                             <td style="width: 49px"></td>

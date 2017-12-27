@@ -6,7 +6,7 @@ using System.Web.UI.WebControls;
 using System.Web.Security;
 using System.Data;
 
-namespace DailyNotes
+namespace DailyNotes.TreeView
 {
     public partial class XMLDynamicTreeView : System.Web.UI.Page
     {

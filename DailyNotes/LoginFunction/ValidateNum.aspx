@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ValidateNum.aspx.cs" Inherits="DailyNotes.ValidateNum" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ValidateNum.aspx.cs" Inherits="DailyNotes.LoginFunction.ValidateNum" %>
 
 <!DOCTYPE html>
 
