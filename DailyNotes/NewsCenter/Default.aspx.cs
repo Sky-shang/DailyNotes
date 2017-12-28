@@ -9,7 +9,7 @@ namespace DailyNotes.NewsCenter
         //string a = HttpContext.Current.User.Identity.Name;      
         CommonClass CC = new CommonClass();
         protected void Page_Load(object sender, EventArgs e)
-        {          
+        {
             //时政要闻
             dlSZ.DataSource = CC.GetDataSet("SELECT TOP 5 * FROM tb_News WHERE Style = '时政要闻' order by issueDate Desc", "tbNews");
             dlSZ.DataKeyField = "id";
