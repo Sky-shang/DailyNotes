@@ -110,6 +110,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AsyncAndAwait.aspx" />
     <Content Include="TreeView\Area.xml" />
     <Content Include="css\css.css" />
     <Content Include="NewsCenter\Default.aspx" />
@@ -174,6 +175,7 @@
       <LastGenOutput>ModelTemplate.cs</LastGenOutput>
     </Content>
     <Content Include="TreeView\XMLDynamicTreeView.aspx" />
+    <Content Include="事务回滚和批量插入.aspx" />
     <None Include="packages.config" />
     <Content Include="Web.config" />
     <None Include="Web.Debug.config">
@@ -203,6 +205,13 @@
     <Content Include="LoginFunction\ValidateNum.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AsyncAndAwait.aspx.cs">
+      <DependentUpon>AsyncAndAwait.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AsyncAndAwait.aspx.designer.cs">
+      <DependentUpon>AsyncAndAwait.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\BaseClass.cs" />
     <Compile Include="NewsCenter\bottom.ascx.cs">
       <DependentUpon>bottom.ascx</DependentUpon>
@@ -411,6 +420,13 @@
     </Compile>
     <Compile Include="TreeView\XMLDynamicTreeView.aspx.designer.cs">
       <DependentUpon>XMLDynamicTreeView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="事务回滚和批量插入.aspx.cs">
+      <DependentUpon>事务回滚和批量插入.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="事务回滚和批量插入.aspx.designer.cs">
+      <DependentUpon>事务回滚和批量插入.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
