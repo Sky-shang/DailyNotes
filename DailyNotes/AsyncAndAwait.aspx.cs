@@ -152,7 +152,6 @@ namespace DailyNotes
             // await 后面的方法将在另外一个线程中执行
             await GetName(new object());
         }
-
         public async Task GetName(object obj)
         {
             // Delay 方法来自于.net 4.5

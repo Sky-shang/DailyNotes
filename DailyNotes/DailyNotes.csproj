@@ -48,8 +48,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\AspNet.ScriptManager.jQuery.dll</HintPath>
     </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.6.10.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.6.10\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -111,6 +117,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AsyncAndAwait.aspx" />
+    <Content Include="TestLogger.aspx" />
     <Content Include="TreeView\Area.xml" />
     <Content Include="css\css.css" />
     <Content Include="NewsCenter\Default.aspx" />
@@ -175,7 +182,9 @@
       <LastGenOutput>ModelTemplate.cs</LastGenOutput>
     </Content>
     <Content Include="TreeView\XMLDynamicTreeView.aspx" />
+    <Content Include="zip压缩与解压.aspx" />
     <Content Include="事务回滚和批量插入.aspx" />
+    <Content Include="Log\Config\log4net.config" />
     <None Include="packages.config" />
     <Content Include="Web.config" />
     <None Include="Web.Debug.config">
@@ -212,7 +221,12 @@
     <Compile Include="AsyncAndAwait.aspx.designer.cs">
       <DependentUpon>AsyncAndAwait.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Log\Models\FlashLogger.cs" />
+    <Compile Include="Log\Models\FlashLogLevel.cs" />
+    <Compile Include="Log\Models\FlashLogMessage.cs" />
     <Compile Include="Models\BaseClass.cs" />
+    <Compile Include="Models\Logger.cs" />
+    <Compile Include="Models\ZipHelper.cs" />
     <Compile Include="NewsCenter\bottom.ascx.cs">
       <DependentUpon>bottom.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -363,6 +377,13 @@
     <Compile Include="NewsCenter\showNews.aspx.designer.cs">
       <DependentUpon>showNews.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TestLogger.aspx.cs">
+      <DependentUpon>TestLogger.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestLogger.aspx.designer.cs">
+      <DependentUpon>TestLogger.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TreeView\SqlDynamicTreeView.aspx.cs">
       <DependentUpon>SqlDynamicTreeView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -420,6 +441,13 @@
     </Compile>
     <Compile Include="TreeView\XMLDynamicTreeView.aspx.designer.cs">
       <DependentUpon>XMLDynamicTreeView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="zip压缩与解压.aspx.cs">
+      <DependentUpon>zip压缩与解压.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="zip压缩与解压.aspx.designer.cs">
+      <DependentUpon>zip压缩与解压.aspx</DependentUpon>
     </Compile>
     <Compile Include="事务回滚和批量插入.aspx.cs">
       <DependentUpon>事务回滚和批量插入.aspx</DependentUpon>

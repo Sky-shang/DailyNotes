@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DailyNotes.Log.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +14,7 @@ namespace DailyNotes
         protected void Application_Start(object sender, EventArgs e)
         {
             Application["UserCount"] = 0;
+            FlashLogger.Instance().Register();
         }
 
         protected void Session_Start(object sender, EventArgs e)

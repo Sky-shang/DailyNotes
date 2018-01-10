@@ -30,7 +30,7 @@ namespace DailyNotes.Log.Models
         /// <summary>
         /// 日志
         /// </summary>
-        private static FlashLogger _flashLog = new FlashLogger();
+        private static readonly FlashLogger FlashLog = new FlashLogger();
 
 
         private FlashLogger()
@@ -55,7 +55,7 @@ namespace DailyNotes.Log.Models
         /// <returns></returns>
         public static FlashLogger Instance()
         {
-            return _flashLog;
+            return FlashLog;
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace DailyNotes.Log.Models
         /// <param name="message">日志文本</param>
         /// <param name="level">等级</param>
         /// <param name="ex">Exception</param>
-        public void EnqueueMessage(string message, FlashLogLevel level, Exception ex = null)
+        private void EnqueueMessage(string message, FlashLogLevel level, Exception ex = null)
         {
             if ((level == FlashLogLevel.Debug && _log.IsDebugEnabled)
              || (level == FlashLogLevel.Error && _log.IsErrorEnabled)
