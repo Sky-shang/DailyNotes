@@ -35,7 +35,7 @@ namespace DailyNotes.Log.Models
 
         private FlashLogger()
         {
-            var configFile = new FileInfo(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "log4net.config"));
+            var configFile = new FileInfo(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Log/Config/log4net.config"));
             if (!configFile.Exists)
             {
                 throw new Exception("未配置log4net配置文件！");
