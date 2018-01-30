@@ -120,6 +120,8 @@
     <Content Include="WeChat\CSS\example.css" />
     <Content Include="WeChat\CSS\weui.css" />
     <Content Include="WeChat\CSS\weui.min.css" />
+    <Content Include="WeChat\Demo\HtmlPage1.html" />
+    <Content Include="WeChat\Demo\HtmlPage2.html" />
     <Content Include="WeChat\Demo\index.html" />
     <Content Include="WeChat\images\icon_footer.png" />
     <Content Include="WeChat\images\icon_footer_link.png" />
@@ -282,6 +284,7 @@
     <Compile Include="AsyncAndAwait.aspx.designer.cs">
       <DependentUpon>AsyncAndAwait.aspx</DependentUpon>
     </Compile>
+    <Compile Include="HttpHandler\JpgHandler.cs" />
     <Compile Include="Log\Models\FlashLogger.cs" />
     <Compile Include="Log\Models\FlashLogLevel.cs" />
     <Compile Include="Log\Models\FlashLogMessage.cs" />
@@ -503,6 +506,9 @@
     <Compile Include="TreeView\XMLDynamicTreeView.aspx.designer.cs">
       <DependentUpon>XMLDynamicTreeView.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WeChat\Model\Cryptography.cs" />
+    <Compile Include="WeChat\Model\Sample.cs" />
+    <Compile Include="WeChat\Model\WXBizMsgCrypt.cs" />
     <Compile Include="zip压缩与解压.aspx.cs">
       <DependentUpon>zip压缩与解压.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

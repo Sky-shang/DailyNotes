@@ -193,13 +193,15 @@ $(function () {
         // 1. 参考 http://stackoverflow.com/questions/23757345/android-does-not-correctly-scroll-on-input-focus-if-not-body-element
         //    Android 手机下, input 或 textarea 元素聚焦时, 主动滚一把
         if (/Android/gi.test(navigator.userAgent)) {
-            window.addEventListener('resize', function () {
-                if (document.activeElement.tagName == 'INPUT' || document.activeElement.tagName == 'TEXTAREA') {
-                    window.setTimeout(function () {
-                        document.activeElement.scrollIntoViewIfNeeded();
-                    }, 0);
-                }
-            })
+            window.addEventListener('resize',
+                function() {
+                    if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') {
+                        window.setTimeout(function() {
+                                document.activeElement.scrollIntoViewIfNeeded();
+                            },
+                            0);
+                    }
+                });
         }
     }
     function setJSAPI(){

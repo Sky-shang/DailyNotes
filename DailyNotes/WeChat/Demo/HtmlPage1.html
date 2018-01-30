@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        p:before {
+            content: "H" /*:before和:after必带技能，重要性为满5颗星*/
+        }
+
+        p:after {
+            content: "d" /*:before和:after必带技能，重要性为满5颗星*/
+        }
+
+        .rectangle {
+            width: 0;
+            height: 0;
+            border-left: 50px solid red;
+            border-bottom: 50px solid blue;
+            border-top: 50px solid black;
+            border-right: 50px solid purple
+        }
+
+        .triangle {
+            width: 0;
+            height: 0;
+            border: 50px solid transparent; /*这里我们将元素的边框宽度设置为50px，transparent表示边框颜色是透明的，solid表示边框是实线的*/
+            border-top-color: black; /*这里我们仅将上边框的颜色设置为黑色，众所周知，css后面的样式代码会覆盖之前的相同的样式代码，至于其他三边的还是透明色*/
+            /*border-bottom-color: black; //这里设置底部边框色为黑色
+              border-left-color: black;   //这里设置左边边框色为黑色
+              border-right-color:black    //这里设置右边边框色为黑色*/
+        }
+
+        .test-div {
+            position: relative; /*日常相对定位*/
+            width: 150px;
+            height: 36px;
+            border: 1px solid black;
+            border-radius: 5px;
+            background: rgba(245,245,245,1)
+        }
+
+            .test-div:before, .test-div:after {
+                content: ""; /*:before和:after必带技能，重要性为满5颗星*/
+                display: block;
+                position: absolute; /*日常绝对定位*/
+                top: 8px;
+                width: 0;
+                height: 0;
+                border: 6px solid transparent;
+            }
+
+            .test-div:before {
+                left: -11px;
+                border-right-color: rgba(245,245,245,1);
+                z-index: 1
+            }
+
+            .test-div:after {
+                left: -12px;
+                border-right-color: rgba(0,0,0,1);
+                z-index: 0
+            }
+
+        .first-div {
+            width: 100px;
+            height: 100px;
+            background: purple; /*这里定义个背景，让我们知道这个div在哪*/
+            position: absolute;
+            left: 500px;
+            top: 500px;
+            z-index: 1
+        }
+
+        .second-div {
+            position: absolute;
+            left: 500px;
+            top: 500px;
+            width: 30px;
+            height: 30px;
+            background: white;
+            z-index: 2
+        }
+
+        .test-zoom {
+            width: 100px;
+            height: 100px;
+            float: left
+        }
+
+        .third-div {
+            background: purple;
+            zoom: 1.5
+        }
+
+        .fourth-div {
+            background: black;
+            zoom: 1
+        }
+
+        .fifth-div {
+            background: red;
+            zoom: .5
+        }
+        /*em 和 rem 是什么
+          1em等于当前的字体尺寸，数值的改变意味着字体大小的调整。em 有继承这个特性，也就是说，外部父元素定义了字体的em大小，内部子元素会继承这一属性的样式。
+          rem = root em 。顾名思义，root即根部的，顶部的。也就是根部的em，这个根部指的是HTML根元素。所以rem的大小是针对HTML根元素的大小做字体的相对大小的调整。*/
+        body {
+            font-size: 12px;
+        }
+        /*html{
+            font-size: 12px;
+        }*/
+        .test-emAndrem {
+            width: 200px;
+            height: 100px;
+            float: left
+        }
+
+        .sixth-div {
+            font-size: 1em
+        }
+
+        .seventh-div {
+            font-size: 2em
+        }
+
+        .eighth-div {
+            font-size: 1rem
+        }
+
+        .ninth-div {
+            font-size: 2rem
+        }
+    </style>
+</head>
+<body>
+    <p>ello Worl</p>
+    <div class="rectangle"></div>
+    <div class="triangle"></div>
+    <div class="test-div"></div>
+    <div class="first-div"></div>
+    <div class="second-div"></div>
+    <div class="test-zoom third-div"></div>
+    <div class="test-zoom fourth-div"></div>
+    <div class="test-zoom fifth-div"></div>
+    <div class="test-emAndrem sixth-div">Hello World</div>
+    <div class="test-emAndrem seventh-div">Hello World</div>
+    <div class="test-emAndrem eighth-div">Hello World</div>
+    <div class="test-emAndrem ninth-div">Hello World</div>
+    <script>
+        /*1、字面量方式*/
+        //var a = {};
+        //console.log(a.__proto__);  //Object {}
+
+        //console.log(a.__proto__ === a.constructor.prototype); //true
+
+        /*2、构造器方式*/
+        //var A = function () { };
+        //var a = new A();
+        //console.log(a.__proto__); //Object {}
+
+        //console.log(a.__proto__ === a.constructor.prototype); //true
+
+        /*3、Object.create()方式*/
+        var a1 = { a: 1 }
+        var a2 = Object.create(a1);
+        console.log(a2.__proto__); //Object {a: 1}
+
+        console.log(a2.__proto__ === a2.constructor.prototype); //false（此处即为图1中的例外情况）
+        console.log(a2.__proto__ === a1); 
+
+        var A = function () { };
+        var a = new A();
+        console.log(a.__proto__); //A {}（即构造器function A 的原型对象）
+        console.log(a.__proto__.__proto__); //Object {}（即构造器function Object 的原型对象）
+        console.log(a.__proto__.__proto__.__proto__); //null
+
+        //①构造器Function的构造器是它自身
+        console.log(Function.constructor === Function);//true
+
+        //②构造器Object的构造器是Function（由此可知所有构造器的constructor都指向Function）
+        console.log(Object.constructor === Function);//true
+
+        //③构造器Function的__proto__是一个特殊的匿名函数function() {}
+        console.log(Function.__proto__);//function() {}
+
+        //④这个特殊的匿名函数的__proto__指向Object的prototype原型。
+        console.log(Function.__proto__.__proto__ === Object.prototype);//true
+
+        //⑤Object的__proto__指向Function的prototype，也就是上面③中所述的特殊匿名函数
+        console.log(Object.__proto__ === Function.prototype);//true
+        console.log(Function.prototype === Function.__proto__);//true
+    </script>
+</body>
+</html>

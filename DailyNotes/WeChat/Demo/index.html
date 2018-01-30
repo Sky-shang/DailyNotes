@@ -633,7 +633,7 @@
             <div class="page__ft">
                 <a href="javascript:home()"><img src="../images/icon_footer_link.png" /></a>
             </div>
-            <!--BEGIN toast-->
+            <!--BEGIN toast--> 
             <div id="toast" style="display: none;">
                 <div class="weui-mask_transparent"></div>
                 <div class="weui-toast">
@@ -656,7 +656,7 @@
             $(function () {
                 var $toast = $('#toast');
                 $('#showToast').on('click', function () {
-                    if ($toast.css('display') != 'none') return;
+                    if ($toast.css('display') !== 'none') return;
 
                     $toast.fadeIn(100);
                     setTimeout(function () {
@@ -669,7 +669,7 @@
             $(function () {
                 var $loadingToast = $('#loadingToast');
                 $('#showLoadingToast').on('click', function () {
-                    if ($loadingToast.css('display') != 'none') return;
+                    if ($loadingToast.css('display') !== 'none') return;
 
                     $loadingToast.fadeIn(100);
                     setTimeout(function () {

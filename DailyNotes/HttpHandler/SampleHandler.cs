@@ -25,7 +25,6 @@ namespace DailyNotes.HttpHandler
             response.ContentType = "text/html";
             response.Write(string.Format(responseString, request.UserAgent));
         }
-
         public bool IsReusable => true;
     }
 }
