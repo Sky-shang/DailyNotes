@@ -20,7 +20,7 @@ namespace DailyNotes.HttpHandler
             else
             {
                 // 如果 UrlReferrer中不包含自己站点主机域名，则显示一张默认的禁止盗链的图片
-                if (context.Request.UrlReferrer.Host.IndexOf("yourdomain.com", StringComparison.Ordinal) > 0)
+                if (context.Request.UrlReferrer.Host.IndexOf("host", StringComparison.Ordinal) > 0)
                 {
                     context.Response.ContentType = "image/JPEG";
                     context.Response.WriteFile(fileName);
