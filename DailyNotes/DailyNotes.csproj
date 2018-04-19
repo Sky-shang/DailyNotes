@@ -122,6 +122,7 @@
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="WebFormsRoute.aspx" />
     <Content Include="WeChat\CSS\example.css" />
     <Content Include="WeChat\CSS\weui.css" />
     <Content Include="WeChat\CSS\weui.min.css" />
@@ -523,6 +524,13 @@
     </Compile>
     <Compile Include="TreeView\XMLDynamicTreeView.aspx.designer.cs">
       <DependentUpon>XMLDynamicTreeView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormsRoute.aspx.cs">
+      <DependentUpon>WebFormsRoute.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormsRoute.aspx.designer.cs">
+      <DependentUpon>WebFormsRoute.aspx</DependentUpon>
     </Compile>
     <Compile Include="WeChat\Model\Cryptography.cs" />
     <Compile Include="WeChat\Model\Sample.cs" />

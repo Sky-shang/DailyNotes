@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 
@@ -24,13 +25,19 @@ namespace DailyNotes
                 Application.Lock();
                 int userCount = (int)Application["UserCount"];
                 Application["UserCount"] = ++userCount;
+
+                //注册路由
+                RouteTable.Routes.MapPageRoute(
+                    "product-search",
+                    "albums/search/{term}",
+                    "~/WebFormsRoute.aspx"
+                );
             }
             finally
             {
                 Application.UnLock();
             }
         }
-
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
 
