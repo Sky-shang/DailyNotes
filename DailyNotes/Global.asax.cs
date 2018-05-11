@@ -27,11 +27,11 @@ namespace DailyNotes
                 Application["UserCount"] = ++userCount;
 
                 //注册路由
-                RouteTable.Routes.MapPageRoute(
-                    "product-search",
-                    "albums/search/{term}",
-                    "~/WebFormsRoute.aspx"
-                );
+                //RouteTable.Routes.MapPageRoute(
+                //    "product-search",
+                //    "albums/search/{term}",
+                //    "~/WebFormsRoute.aspx"
+                //);
             }
             finally
             {
