@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+<div>
+    <p id="first"></p>
+    <p id="second"></p>
+</div>
+<script>
+    function getSearchString(key) {
+        // 获取URL中?之后的字符
+        var str = location.search;
+        str = str.substring(1, str.length);
+
+        // 以&分隔字符串，获得类似name=xiaoli这样的元素数组
+        var arr = str.split("&");
+        var obj = new Object();
+
+        // 将每一个数组元素以=分隔并赋给obj对象    
+        for (var i = 0; i < arr.length; i++) {
+            var tmpArr = arr[i].split("=");
+            obj[decodeURIComponent(tmpArr[0])] = decodeURIComponent(tmpArr[1]);
+        }
+        return obj[key];
+    }
+
+    function getQuery(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+
+    document.getElementById('first').innerHTML = getSearchString('name');
+    document.getElementById('second').innerHTML = getQuery('name');
+</script>
+</body>
+</html>
