@@ -307,6 +307,9 @@
     <Compile Include="AsyncAndAwait.aspx.designer.cs">
       <DependentUpon>AsyncAndAwait.aspx</DependentUpon>
     </Compile>
+    <Compile Include="HttpHandler\Handler1.cs" />
+    <Compile Include="HttpHandler\Handler2.cs" />
+    <Compile Include="HttpHandler\HandlerFactory.cs" />
     <Compile Include="HttpHandler\JpgHandler.cs" />
     <Compile Include="Log\Models\FlashLogger.cs" />
     <Compile Include="Log\Models\FlashLogLevel.cs" />
