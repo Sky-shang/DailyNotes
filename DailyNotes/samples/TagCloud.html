@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+        div.jqcloud span.vertical {
+            -webkit-writing-mode: vertical-rl;
+            writing-mode: tb-rl;
+        }
+    </style>
+    <link href="Scripts/jqcloud/jqcloud.css" rel="stylesheet" />
+    <!-- 标签云相关库 -->
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script src="Scripts/TagsCloud/jquery.engine3D.js"></script>
+    <script src="Scripts/TagsCloud/jquery.particlePhysics.js"></script>
+    <script src="Scripts/TagsCloud/jquery.starfieldTagCloud.js"></script>
+    <!-- 定时器 -->
+    <script>
+        function customTimer(inpId, fn) {
+            if ($(inpId).length) {
+                fn();
+            }
+            else {
+                var intervalId = setInterval(function () {
+                    if ($(inpId).length) {  //如果存在了
+                        clearInterval(intervalId);  // 则关闭定时器
+                        customTimer(inpId, fn);              //执行自身
+                    }
+                }, 100);
+            }
+        }
+        function generateTagClouds() {
+            $('.catListTag>ul').wrap('<div class=\'wrap\' ></div>').parent().css({ 'width': '240px', 'height': '240px' });
+
+            var options = {
+                'range': [-200, 300],
+                'gravity': -10,
+                'xPos': 0.5,
+                'yPos': 0.5,
+                'gravityVector': [0, 0, 1],
+                'interval': 100,
+                'hoverGravityFactor': 0
+            };
+
+            $('div.wrap').starfieldTagCloud(options);
+        }
+        $(function () {
+            customTimer('.catListTag', generateTagClouds);
+        });
+
+    </script>
+    <script src="Scripts/jqcloud/jqcloud-1.0.4.min.js"></script>
+    <script type="text/javascript">
+        var word_list = [
+            { text: "Lorem", weight: 13, link: "https://github.com/DukeLeNoir/jQCloud" },
+            { text: "Ipsum", weight: 10.5, html: { title: "My Title", "class": "custom-class" }, link: { href: "http://jquery.com/", target: "_blank" } },
+            { text: "Dolor", weight: 9.4 },
+            { text: "Sit", weight: 8 },
+            { text: "Amet", weight: 6.2 },
+            { text: "Consectetur", weight: 5 },
+            { text: "Adipiscing", weight: 5 },
+            { text: "Elit", weight: 5 },
+            { text: "Nam et", weight: 5 },
+            { text: "Leo", weight: 4 },
+            { text: "Sapien", weight: 4 },
+            { text: "Pellentesque", weight: 3 },
+            { text: "habitant", weight: 3 },
+            { text: "morbi", weight: 3 },
+            { text: "tristisque", weight: 3 },
+            { text: "senectus", weight: 3 },
+            { text: "et netus", weight: 3 },
+            { text: "et malesuada", weight: 3 },
+            { text: "fames", weight: 2 },
+            { text: "ac turpis", weight: 2 },
+            { text: "egestas", weight: 2 },
+            { text: "Aenean", weight: 2 },
+            { text: "vestibulum", weight: 2 },
+            { text: "elit", weight: 2 },
+            { text: "sit amet", weight: 2 },
+            { text: "metus", weight: 2 },
+            { text: "adipiscing", weight: 2 },
+            { text: "ut ultrices", weight: 2 },
+            { text: "justo", weight: 1 },
+            { text: "dictum", weight: 1 },
+            { text: "Ut et leo", weight: 1 },
+            { text: "metus", weight: 1 },
+            { text: "at molestie", weight: 1 },
+            { text: "purus", weight: 1 },
+            { text: "Curabitur", weight: 1 },
+            { text: "diam", weight: 1 },
+            { text: "dui", weight: 1 },
+            { text: "ullamcorper", weight: 1 },
+            { text: "id vuluptate ut", weight: 1 },
+            { text: "mattis", weight: 1 },
+            { text: "et nulla", weight: 1 },
+            { text: "Sed", weight: 1 }
+        ];
+        $(function () {
+            //$("#jqcloud").jQCloud(word_list, { shape: "rectangular" });
+            $("#jqcloud").jQCloud(word_list);
+        });
+    </script>
+</head>
+<body>
+    <div class="catListTag">
+        <ul style="padding: 0px; margin: 0px; list-style: none;">
+            <li><div><a href="http://www.cnblogs.com/yy3b2007com/tag/Hadoop%2BSpark/">Hadoop+Spark</a>(59)</div></li>
+            <li><div><a href="http://www.cnblogs.com/yy3b2007com/tag/java/">java</a>(51)</div></li>
+            <li><div><a href="http://www.cnblogs.com/yy3b2007com/tag/C%23/">C#</a>(47)</div></li>
+            <li><div><a href="http://www.cnblogs.com/yy3b2007com/tag/java-struts2/">java-struts2</a>(28)</div></li>
+            <li><div><a href="http://www.cnblogs.com/yy3b2007com/tag/SqlServer/">SqlServer</a>(27)</div></li>
+            <li><div><a href="http://www.cnblogs.com/yy3b2007com/tag/Linux/">Linux</a>(24)</div></li>
+            <li><div><a href="http://www.cnblogs.com/yy3b2007com/tag/Java-Spring/">Java-Spring</a>(22)</div></li>
+            <li><div><a href="http://www.cnblogs.com/yy3b2007com/tag/Spark/">Spark</a>(18)</div></li>
+            <li><div><a href="http://www.cnblogs.com/yy3b2007com/tag/SQL/">SQL</a>(16)</div></li>
+            <li><div><a href="http://www.cnblogs.com/yy3b2007com/tag/Scala/">Scala</a>(16)</div></li>
+            <li><div><a href="http://www.cnblogs.com/yy3b2007com/tag/">更多</a></div></li>
+        </ul>
+    </div>
+    <div id="jqcloud" style="width: 550px; height: 350px; border: 1px solid #ccc;"></div>
+
+</body>
+</html>

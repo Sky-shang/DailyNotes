@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html ng-app="App">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/ng-tags-input.css" rel="stylesheet" />
+    <link href="Content/ng-tags-input.bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <!--<div ng-controller="firstController">
+        <tags-input ng-model="tags"></tags-input>
+        <p>Model: {{tags}}</p>
+    </div>-->
+    <div ng-controller="secondController">
+        <tags-input ng-model="tags">
+            <auto-complete source="loadTags($query)"></auto-complete>
+        </tags-input>
+        <p>Model: {{tags}}</p>
+    </div>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/ng-tags-input.js"></script>
+    <script>
+        var app = angular.module('App', ['ngTagsInput']);
+        //app.controller('firstController',
+        //    [
+        //        '$scope', '$http', function ($scope, $http) {
+        //            $scope.tags = [
+        //                { text: 'Tag1' },
+        //                { text: 'Tag2' },
+        //                { text: 'Tag3' }
+        //            ];
+        //        }
+        //    ]);
+
+        app.controller('secondController', function ($scope, tags) {
+            $scope.tags = [
+                { text: 'Tag1' },
+                { text: 'Tag2' },
+                { text: 'Tag3' }
+            ];
+
+            $scope.loadTags = function (query) {
+                return tags.load();
+            };
+        });
+
+        app.service('tags', function ($q) {
+            var tags = [
+                { "text": "Tag1" },
+                { "text": "Tag2" },
+                { "text": "Tag3" },
+                { "text": "Tag4" },
+                { "text": "Tag5" },
+                { "text": "Tag6" },
+                { "text": "Tag7" },
+                { "text": "Tag8" },
+                { "text": "Tag9" },
+                { "text": "Tag10" }
+            ];
+
+            this.load = function () {
+                var deferred = $q.defer();
+                deferred.resolve(tags);
+                return deferred.promise;
+            };
+        });
+    </script>
+</body>
+</html>

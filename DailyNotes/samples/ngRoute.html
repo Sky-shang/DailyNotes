@@ -1,0 +1,234 @@
+﻿<!--<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
+</head>
+<body>
+
+    <div ng-app="myApp" ng-controller="customersCtrl">
+
+        <div id="box">
+            <span ng-repeat="item in data" repeat-finish="renderFinish()">{{item.str}}</span>
+        </div>
+
+    </div>
+
+    <script>
+
+        var app = angular.module('myApp', []);
+        app.controller('customersCtrl', function ($scope) {
+            //要循环的数据
+            $scope.data = [
+                {
+                    str: 'a'
+                },
+                {
+                    str: 'b'
+                },
+                {
+                    str: 'c'
+                }
+            ];
+            //controller里对应的处理函数
+            $scope.renderFinish = function () {
+                console.log('渲染完之后的操作')
+            }
+        });
+
+        //自定义指令repeatFinish
+        app.directive('repeatFinish', function () {
+            return {
+                link: function (scope, element, attr) {
+                    console.log(scope.$index)
+                    if (scope.$last == true) {
+                        console.log('ng-repeat执行完毕');
+                        scope.$eval(attr.repeatFinish);
+                    }
+                }
+            }
+        })
+
+    </script>
+
+</body>
+</html>-->
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
+</head>
+<body ng-app="copyExample">
+<div ng-controller="ExampleController">
+    <form novalidate class="simple-form">
+        Name: <input type="text" ng-model="user.name" /><br />
+        E-mail: <input type="email" ng-model="user.email" />(输入email格式)<br />
+        Gender: <input type="radio" ng-model="user.gender" value="male" />male
+        <input type="radio" ng-model="user.gender" value="female" />female<br />
+        <button ng-click="reset()">RESET</button>
+        <button ng-click="update(user)">SAVE</button>
+    </form>
+</div>
+<pre>form =  {{user | json}}</pre>
+<pre>master = {{master | json }}</pre>
+<script type="text/javascript">
+        var app = angular.module('copyExample', []);
+        app.controller('ExampleController', ['$scope', function ($scope) {
+            $scope.master = {};
+            $scope.update = function (user) {
+                // Example with 1 argument
+                $scope.master = angular.copy(user);
+            };
+            $scope.reset = function () {
+                // Example with 2 arguments
+                angular.copy($scope.master, $scope.user);
+            };
+        }]);
+    </script>
+
+</body>
+</html>-->
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+
+    姓名: {{ msg | reverse }}
+
+</div>
+
+<script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl',
+            function ($scope) {
+                $scope.msg = "Runoob";
+            });
+        app.filter('reverse',
+            function () { //可以注入依赖
+                return function (text) {
+                    return text.split("").reverse().join("");
+                }
+            });
+
+        function add() {
+            var sum = 0,
+                len = arguments.length;
+            for (var i = 0; i < len; i++) {
+                sum += arguments[i];
+            }
+            console.log(sum);
+            console.log(arguments.callee);
+            console.log(arguments.caller);
+        }
+
+        add();                         // 0
+        add(1);                         // 1
+        add(1, 2, 3, 4);
+    </script>
+
+</body>
+</html>-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>路由</title>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.min.js"></script>
+</head>
+<body ng-app='routeDemo'>
+    <!--左边栏-->
+    <div id="navigator" style="width: 20%;display: inline-block;background-color: red;height: 400px;float: left">
+        <!--菜单-->
+        <ul>
+            <li><a href="#!/home">首页</a></li>
+            <li><a href="#!/woman">女装</a></li>
+            <li><a href="#!/man">男装</a></li>
+            <li><a href="#!/life">生活用品</a></li>
+            <li><a href="#!/cook">厨房用品</a></li>
+        </ul>
+    </div>
+    <!--右边栏-->
+    <div style="width: 80%;display: inline-block;background-color: green;height: 400px;float: right">
+        <div ng-view=""></div>
+    </div>
+    <script type="text/ng-template" id="index.home.html">
+        <h1>这是首页</h1>
+    </script>
+    <script type="text/ng-template" id="index.woman.html">
+        <h1>这是女装</h1>
+    </script>
+    <script type="text/ng-template" id="index.man.html">
+        <h1>这是男装</h1>
+    </script>
+    <script type="text/ng-template" id="index.life.html">
+        <h1>这是生活馆</h1>
+    </script>
+    <script type="text/ng-template" id="index.cook.html">
+        <h1>这是厨房用品</h1>
+    </script>
+    <script type="text/javascript">
+        angular.module('routeDemo', ['ngRoute'])
+            .controller('HomeController', function ($scope, $route) {
+                //$scope.$route = $route;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+            })
+            .controller('WomanController', function ($scope, $route) {
+                //$scope.$route = $route;
+            })
+            .controller('WomanController', function ($scope, $route) {
+                //$scope.$route = $route;
+            })
+            .controller('ManController', function ($scope, $route) {
+                //$scope.$route = $route;
+            })
+            .controller('LifeController', function ($scope, $route) {
+                //$scope.$route = $route;
+            })
+            .controller('CookController', function ($scope, $route) {
+                //$scope.$route = $route;
+            })
+
+            //配置$routeProvider用来定义路由规则
+            //$routeProvider为我们提供了when（path，object）& other(object)函数按顺序定义所有路由，函数包含两个参数：
+            //@param1:url或者url正则规则
+            //@param2：路由配置对象
+            .config(function ($routeProvider) {
+                $routeProvider.when('/home',
+                    {
+                        //templateURL：插入ng-view的HTML模板文件
+                        templateUrl: 'index.home.html',
+                        controller: 'HomeController'
+
+                    }).when('/woman',
+                    {
+                        templateUrl: 'index.woman.html',
+                        controller: 'WomanController'
+                    }).when('/man',
+                    {
+                        templateUrl: 'index.man.html',
+                        controller: 'ManController'
+                    }).when('/life',
+                    {
+                        templateUrl: 'index.life.html',
+                        controller: 'LifeController'
+                    }).when('/cook',
+                    {
+                        templateUrl: 'index.cook.html',
+                        controller: 'CookController'
+                    }).otherwise({ redirectTo: '/home' });
+            })
+    </script>
+</body>
+
+</html>
+

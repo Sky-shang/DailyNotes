@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <button ng-click="increase">increase</button>
+    <button ng-click="decrease">decrease</button>
+    <span ng-bind="data"></span>
+    <script>
+        window.onload = function () {
+            'use strict';
+
+            var scope = {
+                increase: function () {
+                    this.data++;
+                },
+                decrease: function decrease() {
+                    this.data--;
+                },
+                data: 0
+            }
+
+            function bind() {
+                var list = document.querySelectorAll('[ng-click]');
+                for (var i = 0, l = list.length; i < l; i++) {
+                    list[i].onclick = (function (index) {
+                        return function () {
+                            var func = this.getAttribute('ng-click');
+                            scope[func](scope);
+                            apply();
+                        }
+                    })(i);
+                }
+            }
+
+            // apply
+            function apply() {
+                var list = document.querySelectorAll('[ng-bind]');
+                for (var i = 0, l = list.length; i < l; i++) {
+                    var bindData = list[i].getAttribute('ng-bind');
+                    list[i].innerHTML = scope[bindData];
+                }
+            }
+
+            bind();
+            apply();
+        }
+    </script>
+    <script>
+        var $scope = function () {
+            this.$$watchList = [];
+        }
+        $scope.prototype.$watch = function (getNewValue, listener) {
+            var watch = {
+                //name: name,
+                getNewValue: getNewValue,
+                listener: listener
+            };
+
+            this.$$watchList.push(watch);
+        }
+        $scope.prototype.$digest = function () {
+            var list = this.$$watchList;
+            for (var i = 0, l = list.length; i < l; i++) {
+                list[i].listener();
+            }
+        }
+
+        var scope = new $scope();
+        scope.$watch(function () {
+            console.log("hey i have got newValue");
+        },
+            function () {
+                console.log("i am the listener");
+            });
+
+        scope.$watch(function () {
+            console.log("hey i have got newValue 2");
+        },
+            function () {
+                console.log("i am the listener2");
+            });
+
+        scope.$digest();
+    </script>
+</body>
+</html>

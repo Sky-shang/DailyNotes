@@ -1,0 +1,120 @@
+﻿<html ng-app="myApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.min.js"></script>
+</head>
+<body>
+    <div ng-controller="myCtrl">
+        <ul>
+            <li><a href="#/a">click a</a></li>
+            <li><a href="#/b">click b</a></li>
+        </ul>
+
+        <ng-view></ng-view>
+        <!-- <div ng-view ></div> -->
+    </div>
+    <div ng-controller="ParentCtrl">
+        <!--父级-->
+        <div ng-controller="SelfCtrl">
+            <!--自己-->
+            <a ng-click="click()">click me</a>
+            <div ng-controller="ChildCtrl"></div>   <!--子级-->
+        </div>
+        <div ng-controller="BroCtrl"></div>         <!--平级-->
+    </div><br>
+    <div ng-controller="fatherCtrl">
+        <input type="text" ng-model="name" ng-change="nameOnChange()">
+        <h1>Father: {{name}}!</h1>
+        <div ng-controller="sonCtrl">
+            <input type="text" ng-model="name" ng-change="nameOnChange()">
+            <h1>Son: {{name}}</h1>
+        </div>
+    </div>
+    <script type="text/javascript">
+    var app=angular.module("myApp",["ngRoute"])
+        .controller("aController",function($scope,$route){
+            $scope.hello = "hello,a!";
+        })
+        .controller("bController",function($scope){
+            $scope.hello = "hello,b!";
+        })
+        .controller("myCtrl",function($scope,$location){
+
+            $scope.$on("$viewContentLoaded",function(){
+                console.log("ng-view content loaded!");
+            });
+
+            $scope.$on("$routeChangeStart",function(event,next,current){
+                //event.preventDefault(); //cancel url change
+                console.log("route change start!");
+            });
+        })
+        .config(function ($routeProvider, $locationProvider) {
+            $locationProvider.hashPrefix('');
+            $routeProvider
+                .when('/a', {
+                    template: '<h1>{{hello}}</h1>',
+                    controller: 'aController'
+                })
+                .when('/b', {
+                    template: '<h1>{{hello}}</h1>',
+                    controller: 'bController',
+                    resolve: {
+                        // I will cause a 3 second delay
+                        delay: function($q, $timeout) {
+                            var delay = $q.defer();
+                            $timeout(delay.resolve, 3000);
+                            return delay.promise;
+                        }
+                    }
+                })
+                .otherwise({
+                    redirectTo: '/a'
+                });
+            });
+
+    app.controller('SelfCtrl', function($scope) {
+        $scope.click = function () {
+            $scope.$broadcast('to-child', 'child');
+            $scope.$emit('to-parent', 'parent');
+        }
+    });
+
+    app.controller('ParentCtrl', function($scope) {
+        $scope.$on('to-parent', function(event,data) {
+            console.log('ParentCtrl', data);       //父级能得到值
+        });
+        $scope.$on('to-child', function(event,data) {
+            console.log('ParentCtrl', data);       //子级得不到值
+        });
+    });
+
+    app.controller('ChildCtrl', function($scope){
+        $scope.$on('to-child', function(event,data) {
+            console.log('ChildCtrl', data);         //子级能得到值
+        });
+        $scope.$on('to-parent', function(event,data) {
+            console.log('ChildCtrl', data);         //父级得不到值
+        });
+    });
+
+    app.controller('BroCtrl', function($scope){
+        $scope.$on('to-parent', function(event,data) {
+            console.log('BroCtrl', data);          //平级得不到值
+        });
+        $scope.$on('to-child', function(event,data) {
+            console.log('BroCtrl', data);          //平级得不到值
+        });
+        });
+
+    app.controller('fatherCtrl', function ($scope) {
+        $scope.name = "father";
+    });
+    app.controller('sonCtrl', function ($scope) {
+
+    });
+    </script>
+
+</body>
+</html>
