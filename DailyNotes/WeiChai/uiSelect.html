@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="Scripts/angular-xeditable/css/xeditable.min.css" rel="stylesheet" />
-    <link href="assets/global/plugins/angularjs/plugins/ui-select/select.min.css" rel="stylesheet" />
-    <link href="Content/ng-tags-input.css" rel="stylesheet" />
-    <link href="Content/ng-tags-input.bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="scripts/angular-xeditable/css/xeditable.min.css" rel="stylesheet" />
+    <link href="css/select.min.css" rel="stylesheet" />
+    <link href="css/ng-tags-input.css" rel="stylesheet" />
+    <link href="css/ng-tags-input.bootstrap.css" rel="stylesheet" />
     <link href="assets/global/css/components.min.css" id="style_components" rel="stylesheet" type="text/css" />
 
 </head>
@@ -28,11 +28,11 @@
             {{person.name | highlight: $select.search}}
         </ui-select-choices>
     </ui-select>
-    <script src="Scripts/angular.min.js"></script>
-    <script src="Scripts/angular-xeditable/js/xeditable.min.js"></script>
-    <script src="Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
-    <script src="assets/global/plugins/angularjs/plugins/ui-select/select.min.js"></script>
-    <script src="Scripts/ng-tags-input.js"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-xeditable/js/xeditable.min.js"></script>
+    <script src="scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+    <script src="css/select.min.js"></script>
+    <script src="scripts/ng-tags-input.js"></script>
     <script>
         angular.module('app', ["ui.select"])
             .controller('ctrl',
