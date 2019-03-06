@@ -219,6 +219,7 @@
     <Content Include="jQueryRepeater\README.md" />
     <Content Include="jQueryRepeater\repeater.html" />
     <Content Include="jQueryRepeater\repeater.jquery.json" />
+    <Content Include="语音识别.aspx" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="jQueryRepeater\src\intro.js" />
     <Content Include="jQueryRepeater\src\jquery.input.js" />
@@ -680,6 +681,13 @@
     </Compile>
     <Compile Include="事务回滚和批量插入.aspx.designer.cs">
       <DependentUpon>事务回滚和批量插入.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="语音识别.aspx.cs">
+      <DependentUpon>语音识别.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="语音识别.aspx.designer.cs">
+      <DependentUpon>语音识别.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
