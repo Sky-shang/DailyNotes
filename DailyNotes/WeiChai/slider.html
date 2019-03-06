@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Scripts/slider/slider.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div style="margin-bottom: 0px;overflow: hidden;box-shadow: 0 2px 16px #ddd;background-color:#fff;height:360px;">
+        <div id="imgBar" style="margin:0 auto;">
+
+        </div>
+    </div>
+    <script src="../Scripts/jquery-3.3.1.min.js"></script>
+    <script src="scripts/slider/slider1.2.min.js"></script>
+    <script>
+        $("#imgBar").slider({
+            imgs: [
+                "./Images/yyzxbg5.jpg",
+                "http://images.cnblogs.com/cnblogs_com/crazyacking/870247/o_798221-20170315161050166-1628033371.jpg",
+                "http://images.cnblogs.com/cnblogs_com/crazyacking/870247/o_69e100a04d9a64c18d00699bcf921f69.jpg",
+                "https://www.cnblogs.com/images/cnblogs_com/nullering/1289327/o_tom-holmes-556804-unsplash.jpg",
+                "http://images.cnblogs.com/cnblogs_com/crazyacking/870247/o_stock-photo-208257577.jpg"
+            ],
+            scale: 128 / 36,
+            border: true,
+            delay: 2200,
+            x: 10,
+            y: 3
+        });
+    </script>
+</body>
+</html>

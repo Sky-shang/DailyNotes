@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" data-ng-app="demo">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ng demo</title>
+    <script src="scripts/angular.min.js"></script>
+</head>
+<body data-ng-controller="demoController">
+<hello data-ng-model="text">
+    <a href="javascript:;">i'm {{text}}</a>
+</hello>
+<div ng-controller="doubleController">
+    <input type="text" ng-model="color" placeholder="Enter a color" />
+    <br />
+    {{ color }}
+    <!-- 这里要注意写法与@绑定的不同 -->
+    <double-hello color="color"></double-hello>
+</div>
+<div ng-controller="mainController">
+    <input type="text" ng-model="name" placeholder="Enter name" />
+    <br />
+    {{ name }}
+    <hello-world say="say()" name="{{name}}"></hello-world>
+</div>
+<script>
+    var app = angular.module('demo', []).controller('demoController', function ($scope) {
+        $scope.text = '***';
+    }).directive('hello', function () {
+        //编写hello指令
+        return {
+            restrict: 'E',//指定这个指令是Element类型的
+            scope: { text: '=ngModel' },//指定对象
+            link: function ($scope, $elem) {
+                //注册事件
+                $elem.on('click', function () {
+                    //修改数据，双向绑定
+                    $scope.text =$scope.text === '***' ? 'linkFly' : '***';
+                    $scope.$apply();
+                });
+            }
+        };
+        }).controller('doubleController', function($scope) {
+            $scope.color = 'red';
+        })
+        .directive('doubleHello', function() {
+            return {
+                restrict: 'EA',
+                scope: {
+                    color: '='
+                },
+                replace: true,
+                template: '<div><p style="background-color:{{color}}">' +
+                    'Hello world!' +
+                    '</p>' + 
+                    '<input type="text" ng-model="color"></div>'
+            }
+        })
+        .controller('mainController', function($scope) {
+            $scope.name = "yangbo";
+            $scope.say = function() {
+                alert('hello!');
+            }
+        })
+        .directive('helloWorld', function() {
+            return {
+                restrict: 'EA',
+                scope: {
+                    name: '@',
+                    say: '&'
+                },
+                replace: true,
+                template: '<button type="button" ng-bind="name" ng-init="say()"></button>'
+            }
+        })
+</script>
+</body>
+</html>

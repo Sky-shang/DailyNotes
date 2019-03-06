@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="scripts/angular-xeditable/css/xeditable.min.css" rel="stylesheet" />
+    <link href="css/select.min.css" rel="stylesheet" />
+    <link href="css/ng-tags-input.css" rel="stylesheet" />
+    <link href="css/ng-tags-input.bootstrap.css" rel="stylesheet" />
+    <link href="assets/global/css/components.min.css" id="style_components" rel="stylesheet" type="text/css" />
+
+</head>
+<body ng-controller="ctrl">
+    <ui-select ng-model="selected.value" on-select="Function($item, $model)">
+        <ui-select-match>
+            <span ng-bind="$select.selected.name"></span>
+        </ui-select-match>
+        <ui-select-choices repeat="item in (itemArray | filter: $select.search) track by item.id">
+            <span ng-bind="item.name"></span>
+        </ui-select-choices>
+    </ui-select>
+    <ui-select multiple ng-model="p.id" on-select="someFunction($item, $model)" style="width:300px;">
+        <ui-select-match placeholder="Select person...">
+            {{$item.name}}
+        </ui-select-match>
+        <ui-select-choices repeat="person in people | filter: $select.search track by $index">
+            {{person.name | highlight: $select.search}}
+        </ui-select-choices>
+    </ui-select>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-xeditable/js/xeditable.min.js"></script>
+    <script src="scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+    <script src="css/select.min.js"></script>
+    <script src="scripts/ng-tags-input.js"></script>
+    <script>
+        angular.module('app', ["ui.select"])
+            .controller('ctrl',
+                [
+                    '$scope', function($scope) {
+                        $scope.itemArray = [
+                            { id: 1, name: 'first' },
+                            { id: 2, name: 'second' },
+                            { id: 3, name: 'third' },
+                            { id: 4, name: 'fourth' },
+                            { id: 5, name: 'fifth' }
+                        ];
+
+                        $scope.selected = { value: $scope.itemArray[0] };
+
+                        $scope.Function = function (item, model) {
+                            console.log(item);
+                            console.log(model);
+                            console.log($scope.p.id);
+                        }
+
+                        $scope.people = [
+                            {
+                                name: 'Samantha',
+                                email: 'something different than array source',
+                                group: 'bar',
+                                age: 30
+                            }, {
+                                name: 'Allen',
+                                email: 'something different',
+                                group: 'bar',
+                                age: 13
+                            }, {
+                                name: 'Tom',
+                                email: 'Tom different',
+                                group: 'pie',
+                                age: 17
+                            }, {
+                                name: 'June',
+                                email: 'Tom & June',
+                                group: 'line',
+                                age: 24
+                            }, {
+                                name: 'James',
+                                email: 'James@qq.com',
+                                group: 'line',
+                                age: 25
+                            }, {
+                                name: 'Jerry',
+                                email: 'Jerry@qq.com',
+                                group: 'line',
+                                age: 14
+                            }, {
+                                name: 'Tudou',
+                                email: 'Tudou@qq.com',
+                                group: 'line',
+                                age: 44
+                            }
+                        ];
+                        $scope.p = {
+                            id: []
+                        };
+                        $scope.$watch('p',
+                            function(newVal, oldVal) {
+                                console.log($scope.p.id);
+                            },
+                            true);
+
+                        $scope.someFunction = function(item, model) {
+                            console.log(item);
+                            console.log(model);
+                            console.log($scope.p.id);
+                        }
+                    }
+                ]);
+    </script>
+</body>
+</html>
